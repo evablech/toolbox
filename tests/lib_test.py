@@ -19,7 +19,7 @@ def test_clean_data():
     out = clean_data(df)
     assert out.shape == (985, 119)
 
-#fetch test
+#first test
 def test_fetch_url():
     url = 'http://iex.lewagon.com/stable/stock/tsla/news'
     assert isinstance(fetch_url(url), pd.DataFrame)
