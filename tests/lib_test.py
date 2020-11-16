@@ -6,6 +6,7 @@ import toolbox
 import pandas as pd
 # Import from our lib
 from toolbox.lib import clean_data
+from toolbox.lib import fetch_url
 import pytest
 
 
@@ -17,3 +18,7 @@ def test_clean_data():
     assert df.shape == (999, 142)
     out = clean_data(df)
     assert out.shape == (985, 119)
+
+def test_fetch_url():
+    url = 'http://iex.lewagon.com/stable/stock/tsla/news'
+    assert isinstance(fetch_url(url), pd.DataFrame)
