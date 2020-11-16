@@ -49,6 +49,14 @@ def clean_data(data):
 
 # useful functions:
 
+#Weather API functions
+def api_search(query):
+    '''Look for a given city and disambiguate between several candidates'''
+    url = urllib.parse.urljoin(BASE_URI, "/api/location/search")
+    content = requests.get(url, params={'query': query}).json()
+    return content
+
+
 
 if __name__ == '__main__':
     # For introspections purpose to quickly get this functions on ipython
